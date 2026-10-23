@@ -2,7 +2,7 @@
 name: cross-material-consistency-auditor
 slug: cross-material-consistency-auditor-skill
 displayName: Cross-Material Consistency Auditor
-version: "1.0.6"
+version: "1.0.7""
 description: This skill should be used when two or more materials on the same topic or event need to be compared for cross-material consistency before publication. It identifies mismatched numbers, product names, fact wording, terminology, source attributions, structural promises, and cross-platform expression drift across articles, press releases, slide decks, web pages, white papers, and social posts. It produces a diff matrix with severity ratings and recommended unified wording, without modifying originals. Trigger keywords: 口径审计, 跨材料核对, 多平台一致性, 口径不一致, consistency audit, cross-material check, PR vs 稿, 初稿 vs 通稿, multi-platform review, fact drift.
 description_zh: 跨材料口径一致性审计
 description_en: Cross-material consistency auditor
@@ -114,6 +114,10 @@ read_only: true
 
 | Dim | Material A | Material B | Issue | Severity | Unified wording | Affected files |
 |---|---:|---|---|---|---|---|
+
+### Severity grading (2026-10-23)
+
+每条不一致附严重级别：`blocking`（数字/事实/产品名冲突）、`minor`（版本/日期漂移）、`style`（措辞差异）。`blocking` 未清零不得进入发布流程；`minor` 需列出但可由作者拍板保留。
 
 ## Unified recommendations
 
