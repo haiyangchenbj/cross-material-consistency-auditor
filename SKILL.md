@@ -2,7 +2,7 @@
 name: cross-material-consistency-auditor
 slug: cross-material-consistency-auditor-skill
 displayName: Cross-Material Consistency Auditor
-version: "1.0.7""
+version: "1.0.8"
 description: This skill should be used when two or more materials on the same topic or event need to be compared for cross-material consistency before publication. It identifies mismatched numbers, product names, fact wording, terminology, source attributions, structural promises, and cross-platform expression drift across articles, press releases, slide decks, web pages, white papers, and social posts. It produces a diff matrix with severity ratings and recommended unified wording, without modifying originals. Trigger keywords: 口径审计, 跨材料核对, 多平台一致性, 口径不一致, consistency audit, cross-material check, PR vs 稿, 初稿 vs 通稿, multi-platform review, fact drift.
 description_zh: 跨材料口径一致性审计
 description_en: Cross-material consistency auditor
@@ -67,7 +67,7 @@ read_only: true
 - 章节级结构承诺。
 - 术语和框架名称。
 
-产品名监测词表由使用者自备（不随 Skill 内置任何具体产品清单）：优先读环境变量 `CONSISTENCY_PRODUCT_TERMS`（逗号分隔），其次读 `scripts/product-terms.txt`（每行一个，`#` 注释）；两者都没有时退化为通用启发式（驼峰复合词 + 大写缩写）。
+产品名监测词表由使用者自备（不随 Skill 内置任何具体产品清单）：优先读环境变量 `CONSISTENCY_PRODUCT_TERMS`（逗号分隔），其次读使用者自备的本地词表文件（每行一个，`#` 注释）；两者都没有时退化为通用启发式（驼峰复合词 + 大写缩写）。
 
 输出 `01-extracted-claims.json`。
 
@@ -117,7 +117,7 @@ read_only: true
 
 ### Severity grading (2026-10-23)
 
-每条不一致附严重级别：`blocking`（数字/事实/产品名冲突）、`minor`（版本/日期漂移）、`style`（措辞差异）。`blocking` 未清零不得进入发布流程；`minor` 需列出但可由作者拍板保留。
+每条不一致附严重级别：`P0`（数字/事实/产品名冲突）、`P1`（版本/日期漂移）、`P2`（措辞差异）。`P0` 未清零不得进入发布流程；`P1` 需列出但可由作者拍板保留。
 
 ## Unified recommendations
 
