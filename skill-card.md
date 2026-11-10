@@ -1,6 +1,6 @@
 ## Description:
 
-Compares two or more materials on the same topic before publication to identify mismatched numbers, product names, fact wording, terminology, source attributions, structural promises, and cross-platform expression drift.
+Compares two or more materials on the same topic to identify inconsistencies and recommend unified wording without changing originals.
 
 This skill is ready for commercial/non-commercial use.
 
@@ -14,7 +14,7 @@ MIT-0
 
 ## Use Case:
 
-Editorial, PR, product, and localization teams use this skill to compare related materials before publication and produce a consistency audit with severity-rated differences and recommended unified wording.
+Employees, communications teams, and editors can compare press releases, articles, slide decks, web pages, white papers, and social posts before publication. The skill flags factual and wording drift, proposes source-grounded unified wording, and leaves changes to human review.
 
 ### Deployment Geography for Use:
 
@@ -22,37 +22,37 @@ Global
 
 ## Known Risks and Mitigations:
 
-Risk: Generated P0/P1 recommendations may be incomplete or incorrect for publication-critical materials.
+Risk: Applying proposed wording without review could introduce inaccurate or misleading guidance.
 
-Mitigation: Review the audit report and unified wording recommendations before editing or publishing source materials.
+Mitigation: Review the reference source and each recommendation; keep changes under human control.
 
-Risk: Embedded charts, images, or unreadable files may not be fully compared.
+Risk: Audit reports may contain sensitive details from the compared materials.
 
-Mitigation: Provide extracted text or perform a manual check for complex embedded content that the skill flags as unparseable.
+Mitigation: Write reports to a separate output location and restrict access when they contain sensitive information.
 
-Risk: A wrong or outdated reference source can lead to incorrect unified wording.
+Risk: The skill definition's version field is malformed and may prevent loading.
 
-Mitigation: Confirm the designated reference source and resolve obvious reference-source errors before applying recommendations.
+Mitigation: Correct the version field before loading; the server-resolved release version is 1.0.7.
 
 ## Reference(s):
 
-- [Consistency Checklist Reference](artifact/references/consistency-checklist.md)
-- [Replay References](artifact/references/replay-references.md)
-- [ClawHub skill page](https://clawhub.ai/haiyangchenbj/skills/cross-material-consistency-auditor-skill)
+- [ClawHub release page](https://clawhub.ai/haiyangchenbj/skills/cross-material-consistency-auditor-skill)
+- [Consistency checklist](references/consistency-checklist.md)
+- [Replay references](references/replay-references.md)
 
 ## Skill Output:
 
-**Output Type(s):** [Text, Markdown, JSON, Guidance]
+**Output Type(s):** [Analysis, Markdown, JSON, Guidance]
 
-**Output Format:** [Markdown reports and JSON files]
+**Output Format:** [JSON and Markdown, including extracted claims, a diff matrix, an audit report, and unified-wording recommendations]
 
 **Output Parameters:** [1D]
 
-**Other Properties Related to Output:** [Read-only audit outputs; original materials are not modified.]
+**Other Properties Related to Output:** [Preserves original materials; recommendations require human confirmation.]
 
 ## Skill Version(s):
 
-1.0.6 (source: frontmatter and server release metadata)
+1.0.7 (source: server-resolved release metadata)
 
 ## Ethical Considerations:
 
